@@ -24,7 +24,10 @@
     <button>Copiar senha</button>
 
     <script>
+
       let passwordLength = 16
+      const inputEl = document.querySelector("#password")
+
       function generatePassword(){
         const chars = "abcdefghijklmnopqrstuvxwyzABCDEFGHIJKLMNOPQRSTUVXWYZ123456789?!@%$#*&{}()"
         
@@ -36,7 +39,7 @@
 
         }
 
-        const inputEl = document.querySelector("#password")
+       
         inputEl.value = password
 
         console.log(password)
@@ -44,10 +47,14 @@
 
       }
 
+      function copy(){
+        navigator.clipboard.writeText(inputEl.value)
+
+      }
+
       const passwordLengthEl1 = document.querySelector('#password-length')
       passwordLengthEl1.addEventListener('input', function(){
         passwordLength = passwordLengthEl1.value
-        console.log(passwordLength)
         generatePassword()
       })
 
