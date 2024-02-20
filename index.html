@@ -40,7 +40,14 @@
 
         console.log(password)
 
+
       }
+
+      const passwordLengthEl1 = document.querySelector('#password-length')
+      passwordLengthEl1.addEventListener('input', function(){
+        const passwordLength = passwordLengthEl1.value
+        console.log(passwordLength)
+      })
 
       generatePassword()
     </script>
